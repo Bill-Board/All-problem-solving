@@ -1,0 +1,75 @@
+ //BISMILLAHIR RAHMANIR RAHEEM
+//ALLAH IS WATCHING ME
+#include<bits/stdc++.h>
+#include<cstring>
+#include<cmath>
+#include<iterator>
+#include<cstdlib>
+#define IOS   ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define test IOS long long t;cin >> t;while(t--)
+#define ses   "\n"
+#define whp   " "
+#define mxi 300000
+#define REP(i,a,b) for(int i=a; i<b; i++)
+#define rep0(i,n) REP(i,0,n)
+#define rep1(i,n) REP(i,1,n)
+//set <int, greater <int> > ::iterator it;
+//vector<pair<int,int> >a;
+//memset(arr,0,sizeof(hg));
+///  string single character erase-
+///             s.erase(s.begin()+x); where s is st ring name
+///               ans x is index;
+typedef long long v99;
+typedef unsigned long long ull;
+using namespace std;
+v99 fx[4]= {1,-1,0,0};
+v99 fy[4]= {0,0,1,-1};
+
+bool prime[mxi+1];
+void SieveOfEratosthenes(v99 n)
+{
+	memset(prime, true,  sizeof(prime));
+
+	for (v99 p=2; p*p<=n; p++)
+	{
+		if (prime[p] == true)
+		{
+			/// Update all multiples of p
+			for (v99 i=p*2; i<=n; i += p)
+				prime[i] = false;
+		}
+	}
+}
+
+
+int main()
+{
+    //test
+    //while(1)
+    {
+        //SieveOfEratosthenes(mxi);
+        v99 n,c=300000;cin>>n;
+        while(n--)cout<<c++<<whp;cout<<ses;
+    }
+    return 0;
+}
+
+
+
+
+/**
+
+v99 n,i=2;cin>>n;
+        while(n)
+        {
+            if(prime[i]){n--;cout<<i<<whp;}i++;
+        }cout<<ses;
+
+       Alhamdulillah...   😘😘😘😘😍😍😍😍
+                             😋😍
+                          🍔🍔🍔🍔🍰🍔🍔
+                           🍦🍨🍳🍧🍔🍔
+                         🍗🍗🍗🍗🍔🍔🍔🍔
+                       🍕🍕🍕🍕🍕🍕🍰🍦🍨🤤🤤
+                         🤤🤤🤤🤤🤤🤤🤤🤤
+*/

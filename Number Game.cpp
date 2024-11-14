@@ -1,0 +1,138 @@
+ //BISMILLAHIR RAHMANIR RAHEEM
+//ALLAH IS WATCHING ME
+#include<bits/stdc++.h>
+#include<iostream>
+#include<cstring>
+#include<cmath>
+#include<iterator>
+#include<cstdlib>
+#define IOS   ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define test IOS long long t;cin >> t;while(t--)
+#define ses   "\n"
+#define whp   " "
+#define mxi 200003
+#define rep0(i,a,b) for(int i=a; i<b; i++)
+#define rep1(i,a,b) for(int i=a; i<=b; i++)
+#define rep0in(i,a,b) for(int i=a-1; i>=b; i--)
+#define rep1in(i,a,b) for(int i=a; i>b; i--)
+#define repv(i,a) for(auto i=a.begin(); i!=a.end();++i)
+#define INF 0x3f3f3f3f
+#define CLR(a,b) memset(a,b,sizeof(a));
+#define PI acos(-1)
+//set <int, greater <int> > ::iterator it;
+//vector<pair<int,int> >a;
+//memset(arr,0,sizeof(hg));
+//priority_queue <int, vector<int>, greater<int> > pq;
+///  string single character erase-
+///             s.erase(s.begin()+x); where s is st ring name
+///               ans x is index;
+///    transform(sl.begin(), sl.end(), sl.begin(), ::tolower);
+///    transform(su.begin(), su.end(), su.begin(), ::toupper);
+typedef long long v99;
+typedef unsigned long long ull;
+using namespace std;
+v99 fx[4]= {1,-1,0,0};
+v99 fy[4]= {0,0,1,-1};
+v99 ox8[] = {0, 0, 1, 1, 1, -1, -1, -1};
+v99 oy8[] = {1,-1, 1, -1, 0, 0, -1, 1};
+bool sort2val(const pair<int,int> &a,const pair<int,int> &b)
+{
+    if(a.second==b.second)return a.first<b.first;
+    return a.second<b.second;
+}
+
+bool prime[1000100];
+void SieveOfEratosthenes(v99 n,vector<v99>&prme)
+{
+	memset(prime, true, sizeof(prime));
+	for(v99 i=4;i<=n;i+=2)prime[i]=false;
+	for (int p=3; p*p<=n; p++)
+	{
+		if (prime[p] == true)
+		{
+			/// Update all multiples of p
+			for (int i=p*p; i<=n; i += 2*p)
+				prime[i] = false;
+		}
+	}
+		rep1(i,2,n)if(prime[i])prme.push_back(i);
+}
+v99 pw(v99 a, v99 b)
+{
+	v99 ans = 1;
+	for(v99 i = 1; i <= b; ++i)
+		ans = (ans * a);
+	return ans;
+}
+
+template <class T> inline T bigmod(T n,T p,T m)
+{
+    if(p==0)return 1;
+    else if(p%2==0)
+    {
+        v99 val=bigmod(n,p/2,m);
+        return (T)((val*val)%m);
+    }
+    else return (T)(((v99)n*(v99)bigmod(n,p-1,m))%m);
+}
+
+
+///-------------------------------------------------------------------------------------------------------
+
+
+
+int main()
+{
+    /// "Ashishgup" if he wins, and "FastestFinger"
+    //freopen("data.out","w",stdout);
+    vector<v99>prme;
+    SieveOfEratosthenes(1000001,prme);
+    test
+    //while(1)
+    {
+        v99 n;cin>>n;
+        if(n==1){cout<<"FastestFinger"<<ses;continue;}
+        if(n&1 || n==2){cout<<"Ashishgup"<<ses;continue;}
+        v99 odd=0,dui=0;
+        for(auto i:prme)
+        {
+            if(n%i==0)
+            {
+                v99 q=0;
+                while(n%i==0){n/=i;q++;}
+                if(i==2)dui=q;
+                else odd+=q;
+            }
+        }if(n>1)odd++;
+        if(odd==0)cout<<"FastestFinger"<<ses;
+        else if(odd==1 && dui==1)cout<<"FastestFinger"<<ses;
+        else cout<<"Ashishgup"<<ses;
+
+    }
+    return 0;
+}
+
+
+
+
+/**v99 odd=0;
+        for(auto i:prme)
+        {
+            if(n%i==0)
+            {
+                while(n%i==0)n/=i;
+                if(i%1)odd++;
+            }
+        }
+        if(n>1 && n&1)odd++;
+        if(odd&1)cout<<"FastestFinger"<<ses;
+        else cout<<"Ashishgup"<<ses;
+       Alhamdulillah...   😘😘😘😘😍😍😍😍
+                             😋😍
+                          🍔🍔🍔🍔🍰🍔🍔
+                           🍦🍨🍳🍧🍔🍔
+                         🍗🍗🍗🍗🍔🍔🍔🍔
+                       🍕🍕🍕🍕🍕🍕🍰🍦🍨🤤🤤
+                         🤤🤤🤤🤤🤤🤤🤤🤤
+*/
+
