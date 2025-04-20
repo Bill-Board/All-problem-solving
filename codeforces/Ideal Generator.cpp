@@ -8,7 +8,7 @@ using namespace std;
 using ll = long long;
 using pii= pair<int,int>;
 
-const int N = 100005;
+const int N = 100009;
 ll mod= 1e9+7;
 
 void solve(int tc)
