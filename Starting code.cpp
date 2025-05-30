@@ -14,6 +14,8 @@ ll mod= 1e9+7;
 void solve(int tc)
 {
     int n; cin >> n;
+
+    cout << n << endl;
 }
 
 
